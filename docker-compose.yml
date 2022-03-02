@@ -1,8 +1,8 @@
- version: "3.8"
-
- services:
-    snowflake-proxy:
-        network_mode: host
-        image: chrisbensch/docker-snowflake-proxy:latest
-        container_name: snowflake-proxy
-        restart: unless-stopped
+version: "3.8"
+services:
+  snowflake-proxy:
+    network_mode: host
+    image: thetorproject/snowflake-proxy:latest
+    container_name: snowflake-proxy
+    restart: unless-stopped
+    command: [ "-broker" , "https://snowflake-broker.torproject.net/" ]
